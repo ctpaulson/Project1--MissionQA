@@ -23,49 +23,41 @@ namespace Project1__MissionQA.Controllers
 
         //POST: Mission
         [HttpPost]
-        public ActionResult Missions(Mission mission)
+        public ActionResult YourMission(Mission mission)
         {
             if (mission.Name == "Brazil Florianópolis")
             {
                 mission.President = "Ramilfo Silva";
                 mission.Address = "Santa Catarina";
                 mission.Language = "Portuguese";
-                mission.Climate = "Sub-tropical";
+                mission.Climate = "Local steppe";
                 mission.DominantReligion = "Catholicism";
                 mission.Symbol = "file-location-of-the-flag-image";
 
-                //Displaying this is not working for some reason
-                ViewBag.name = mission.Name;
-                ViewBag.president = mission.President;
-                
-                return RedirectToAction("BR");
+                return View(mission);
             }
             else if (mission.Name == "Puerto Rico San Juan")
             {
-                return RedirectToAction("PR");
+                mission.President = "President Boucher";
+                mission.Address = "Puerto Rico";
+                mission.Language = "Spanish";
+                mission.Climate = "Tropical";
+                mission.DominantReligion = "Catholicism";
+                mission.Symbol = "file-location-of-the-flag-image";
+
+                return View(mission);
             }
             else
             {
-                return RedirectToAction("NY");
+                mission.President = "Nelson";
+                mission.Address = "New York";
+                mission.Language = "Multiple";
+                mission.Climate = "Humid subtropical";
+                mission.DominantReligion = "Protestantism";
+                mission.Symbol = "file-location-of-the-big-apple";
+
+                return View(mission);
             }
-        }
-
-        //GET: Brazil
-        public ActionResult BR()
-        {
-            return View();
-        }
-
-        //GET: Puerto Rico
-        public ActionResult PR()
-        {
-            return View();
-        }
-
-        //GET: New York
-        public ActionResult NY()
-        {
-            return View();
         }
     }
 }

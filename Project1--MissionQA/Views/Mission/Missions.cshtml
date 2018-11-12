@@ -10,7 +10,7 @@
 <div class="form-group">
     
     <div>
-        @using (Html.BeginForm("Missions", "Mission", FormMethod.Post))
+        @using (Html.BeginForm("YourMission", "Mission", FormMethod.Post))
         {
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -21,4 +21,4 @@
             <input type="submit" value="Go to your mission page" />
         }
     </div>
-</div> 
+</div>

@@ -164,6 +164,8 @@
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\Mission\Missions.cshtml" />
     <Content Include="Views\Mission\BR.cshtml" />
+    <Content Include="Views\Mission\PR.cshtml" />
+    <Content Include="Views\Mission\YourMission.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
