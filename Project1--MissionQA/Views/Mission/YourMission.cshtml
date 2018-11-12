@@ -4,12 +4,59 @@
     ViewBag.Title = "YourMission";
 }
 
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home", "", "")</li>
+        <li class="breadcrumb-item">@Html.ActionLink("Missions", "Missions")</li>
+        <li class="breadcrumb-item active" aria-current="page">@Model.Name  Mission FAQ's</li>
+    </ol>
+</nav>
+
 <h2>@Model.Name  Mission FAQ's</h2>
-<p>Your mission president: @Model.President</p>
-<p>Your mission address: @Model.Address</p>
-<p>Your mission language: @Model.Language</p>
-<p>Your mission climate: @Model.Climate</p>
-<p>Your mission's dominant religion: @Model.DominantReligion</p>
-<p>Your mission's flag or symbol: </p>
-<img src="@Model.Symbol" alt="Once we have a working link, a real picture will show up here."/>
+<ul>
+    <li>Your mission president: @Model.President</li>
+    <li>Your mission address: @Model.Address</li>
+    <li>Your mission language: @Model.Language</li>
+    <li>Your mission climate: @Model.Climate</li>
+    <li>Your mission's dominant religion: @Model.DominantReligion</li>
+    <li>
+        Your mission's flag or symbol:
+        <img src="@Model.Symbol" alt="Once we have a working link, a real picture will show up here." style="display: inline;"/>
+    </li>
+</ul>
+<br />
+
+
+<h4>What is it like in the @Model.Name  mission?</h4>
+<p>While there are things that every mission around the world has in common, you will find that serving a mission in the @Model.Name mission is very unique. </p>
+<br />
+
+<h4>What kind of food do people eat there?</h4>
+<p>The food in this mission is probably not like what you are used to eating every day. However, it is also probably not the most exotic food you have heard of people eating on their missions.</p>
+<br />
+
+<div class="question-form">
+    @using (Html.BeginForm("SubmitQuestion", "Mission", FormMethod.Post))
+    {
+        <p>Submit a question below:</p>
+        <div class="col-md-10">
+            @Html.TextArea("question")
+        </div>
+
+        <input type="submit" value="Submit" />
+    }
+</div>
+<br />
+
+<div class="reply-form">
+    @using (Html.BeginForm("SubmitReply", "Mission", FormMethod.Post))
+    {
+        <p>Reply to the question below:</p>
+        <div class="col-md-10">
+            @Html.TextArea("reply")
+        </div>
+
+        <input type="submit" value="Reply" />
+    }
+</div>
 

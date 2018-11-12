@@ -5,6 +5,7 @@
 }
 
 <h2>Missions</h2>
+<br />
 
 <p>Select a mission below:</p>
 <div class="form-group">
@@ -17,7 +18,6 @@
                 @Html.DropDownListFor(model => model.Name, new SelectList(ViewBag.missions))
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
-
             <input type="submit" value="Go to your mission page" />
         }
     </div>
