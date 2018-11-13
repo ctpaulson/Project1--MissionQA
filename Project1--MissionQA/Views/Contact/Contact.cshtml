@@ -1,7 +1,79 @@
-﻿
+﻿@{
+    Layout = null;
+}
+
 @{
     ViewBag.Title = "Contact";
 }
+<html>
+<head>
+    <link href="~/Content/container.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li> @Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Missions", "Missions", "Mission")</li>
+                    <li>@Html.ActionLink("About Us", "About", "About")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Contact")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <h3>Contact US</h3>
+        <h4> text@gmail.com</h4>
+        <h4>801-888-888</h4>
+        <div class="container1">
 
-<h2>Contact</h2>
+            <form action="/action_page.php">
+                <center>
+                    <p>
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                    </p>
+                </center>
+                <center>
+                    <p>
+                        <label for="email">Email </label>
+                        <input type="text" id="email" name="email" placeholder="Your last email..">
+                        <label for="country">Subject</label>
+                        <select id="country" name="country">
+                            <option value="Subject1">Subject1</option>
+                            <option value="Subject2">Subject2</option>
+                            <option value="Subject3">Subject3</option>
+                        </select>
+                    </p>
+                </center>
+                <Center>
+                    <label for="subject">Message</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                </Center>
+                @Html.ActionLink("Submit", "Index", "Contact")
+            </form>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
 
