@@ -18,7 +18,10 @@
                 @Html.DropDownListFor(model => model.Name, new SelectList(ViewBag.missions))
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
-            <input type="submit" value="Go to your mission page" />
+            <input type="submit" value="Go to your mission page" class="btn btn-primary" />
+
         }
     </div>
 </div>
+
+

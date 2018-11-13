@@ -39,11 +39,12 @@
     @using (Html.BeginForm("SubmitQuestion", "Mission", FormMethod.Post))
     {
         <p>Submit a question below:</p>
-        <div class="col-md-10">
+        <div class="col-md-10 form-group" id="question-text-area">
             @Html.TextArea("question")
         </div>
+        <input type="submit" value="Submit" class="btn btn-primary" />
 
-        <input type="submit" value="Submit" />
+
     }
 </div>
 <br />
@@ -52,11 +53,10 @@
     @using (Html.BeginForm("SubmitReply", "Mission", FormMethod.Post))
     {
         <p>Reply to the question below:</p>
-        <div class="col-md-10">
+        <div class="col-md-10 form-group" id="reply-text-area">
             @Html.TextArea("reply")
         </div>
-
-        <input type="submit" value="Reply" />
+        <input type="submit" value="Reply" class="btn btn-primary" />
     }
 </div>
 
